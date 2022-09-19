@@ -4,7 +4,9 @@ import com.fox.diexample2.data.datasource.LocalDataSourceImpl
 import com.fox.diexample2.data.datasource.RemoteDataSourceImpl
 import com.fox.diexample2.domain.Repository
 import com.fox.diexample2.data.mapper.Mapper
+import com.fox.diexample2.di.AppScope
 import javax.inject.Inject
+
 
 class RepositoryImpl @Inject constructor(
     private val localDataSourceImpl: LocalDataSourceImpl,

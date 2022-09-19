@@ -7,12 +7,16 @@ import com.fox.diexample2.data.datasource.RemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
+
 
 @Module
 interface DataModule {
 
+
     @Binds
     fun bindLocalData(impl: LocalDataSourceImpl): LocalDataSource
+
 
     @Binds
     fun bindRemoteData(impl: RemoteDataSourceImpl): RemoteDataSource

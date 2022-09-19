@@ -1,14 +1,23 @@
 package com.fox.diexample2.di
 
 import android.content.Context
+import com.fox.diexample2.data.database.Database
 import com.fox.diexample2.presentation.MainActivity
+import com.fox.diexample2.presentation.MainViewModel
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Scope
+import javax.inject.Singleton
 
+@AppScope
 @Component( modules = [DataModule::class, DomainModule::class])
 interface AppComponent {
 
     fun inject(activity: MainActivity)
+
+//    fun getViewModel(): MainViewModel
+//
+//    fun getDataBase(): Database
 
 //    @Component.Builder
 //    interface AppComponentBuilder {
