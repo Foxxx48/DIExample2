@@ -1,11 +1,8 @@
 package com.fox.diexample2.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
+import androidx.appcompat.app.AppCompatActivity
 import com.fox.diexample2.R
-import com.fox.diexample2.di.AppComponent
 import com.fox.diexample2.di.DaggerAppComponent
 import javax.inject.Inject
 
@@ -13,7 +10,12 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: MainViewModel
 
-    private val myComponent = DaggerAppComponent.create()
+    private val myComponent by lazy { DaggerAppComponent.builder()
+        .context(application)
+        .localTime(System.currentTimeMillis())
+        .build()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

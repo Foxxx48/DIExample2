@@ -7,5 +7,4 @@ class RemoteDataSourceImpl @Inject constructor(private val apiService: ApiServic
     override fun method() {
         apiService.method()
     }
-
 }
