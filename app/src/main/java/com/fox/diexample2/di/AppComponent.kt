@@ -10,7 +10,7 @@ import javax.inject.Scope
 import javax.inject.Singleton
 
 @AppScope
-@Component( modules = [DataModule::class, DomainModule::class])
+@Component( modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
 interface AppComponent {
 
     fun inject(activity: MainActivity)
