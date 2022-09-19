@@ -10,16 +10,24 @@ interface AppComponent {
 
     fun inject(activity: MainActivity)
 
-    @Component.Builder
-    interface AppComponentBuilder {
+//    @Component.Builder
+//    interface AppComponentBuilder {
+//
+//        @BindsInstance
+//        fun context(context: Context): AppComponentBuilder
+//
+//        fun build(): AppComponent
+//
+//        @BindsInstance
+//        fun localTime(timeMillis: Long) : AppComponentBuilder
+//    }
 
-        @BindsInstance
-        fun context(context: Context): AppComponentBuilder
-
-        fun build(): AppComponent
-
-        @BindsInstance
-        fun localTime(timeMillis: Long) : AppComponentBuilder
+    @Component.Factory
+    interface AppComponentFactory {
+        fun create(
+            @BindsInstance context: Context,
+            @BindsInstance timeMillis: Long
+        ): AppComponent
     }
 
 }

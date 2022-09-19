@@ -10,10 +10,8 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: MainViewModel
 
-    private val myComponent by lazy { DaggerAppComponent.builder()
-        .context(application)
-        .localTime(System.currentTimeMillis())
-        .build()
+    private val myComponent by lazy { DaggerAppComponent.factory()
+        .create(application, System.currentTimeMillis())
     }
 
 
