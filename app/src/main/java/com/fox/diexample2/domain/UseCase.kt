@@ -1,6 +1,8 @@
 package com.fox.diexample2.domain
 
-class UseCase(
+import javax.inject.Inject
+
+class UseCase @Inject constructor(
     private val repository: Repository
 ) {
 operator fun invoke() {

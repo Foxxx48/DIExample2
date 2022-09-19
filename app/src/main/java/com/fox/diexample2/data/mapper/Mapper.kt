@@ -1,6 +1,8 @@
 package com.fox.diexample2.data.mapper
 
-class Mapper {
+import javax.inject.Inject
+
+class Mapper @Inject constructor(){
     fun map() {
 
     }

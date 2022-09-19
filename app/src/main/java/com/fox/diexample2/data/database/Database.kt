@@ -1,8 +1,9 @@
 package com.fox.diexample2.data.database
 
 import android.util.Log
+import javax.inject.Inject
 
-class Database {
+class Database @Inject constructor() {
     fun method() {
         Log.d(TAG_LOG, "Database")
     }
