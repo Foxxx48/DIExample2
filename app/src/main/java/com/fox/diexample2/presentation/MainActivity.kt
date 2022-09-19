@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.method()
         viewModel2.method()
         findViewById<Button>(R.id.act1_btn_go).setOnClickListener {
-            Intent(this, MainActivity2::class.java).let {
-                startActivity(it)
+            Intent(this, MainActivity2::class.java).apply {
+                startActivity(this)
             }
         }
     }

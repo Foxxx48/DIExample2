@@ -12,12 +12,12 @@ import dagger.multibindings.StringKey
 interface ViewModelModule {
 
     @IntoMap
-    @StringKey("MainViewModel")
+    @ViewModelKey(MainViewModel::class)
     @Binds
     fun bindMainViewModel(Impl: MainViewModel): ViewModel
 
     @IntoMap
-    @StringKey("MainViewModel2")
+    @ViewModelKey(MainViewModel2::class)
     @Binds
     fun bindMainViewModel2(Impl: MainViewModel2): ViewModel
 }
