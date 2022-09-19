@@ -4,19 +4,16 @@ import com.fox.diexample2.data.datasource.LocalDataSource
 import com.fox.diexample2.data.datasource.LocalDataSourceImpl
 import com.fox.diexample2.data.datasource.RemoteDataSource
 import com.fox.diexample2.data.datasource.RemoteDataSourceImpl
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
 @Module
-class DataModule {
+interface DataModule {
 
-    @Provides
-    fun provideLocalData(impl: LocalDataSourceImpl): LocalDataSource {
-        return impl
-    }
+    @Binds
+    fun bindLocalData(impl: LocalDataSourceImpl): LocalDataSource
 
-    @Provides
-    fun provideRemoteData(impl: RemoteDataSourceImpl): RemoteDataSource {
-        return impl
-    }
+    @Binds
+    fun bindRemoteData(impl: RemoteDataSourceImpl): RemoteDataSource
 }

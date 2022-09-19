@@ -2,14 +2,13 @@ package com.fox.diexample2.di
 
 import com.fox.diexample2.data.repository.RepositoryImpl
 import com.fox.diexample2.domain.Repository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
 @Module
-class DomainModule {
+interface DomainModule {
 
-    @Provides
-    fun provideRepository(impl: RepositoryImpl): Repository {
-        return impl
-    }
+    @Binds
+    fun bindRepository(impl: RepositoryImpl): Repository
 }
