@@ -1,15 +1,13 @@
 package com.fox.diexample2.presentation
 
-import android.content.Intent
-import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.fox.diexample2.App
 import com.fox.diexample2.R
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -24,18 +22,11 @@ class MainActivity : AppCompatActivity() {
     private val myComponent by lazy {
         (application as App).myComponent
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myComponent.inject(this)
-//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         viewModel.method()
         viewModel2.method()
-        findViewById<Button>(R.id.act1_btn_go).setOnClickListener {
-            Intent(this, MainActivity2::class.java).let {
-                startActivity(it)
-            }
-        }
     }
 }
